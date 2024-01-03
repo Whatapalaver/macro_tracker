@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace :api do # /api/data
     get '/data', to: 'tests#index'
+    get '/private_data', to: 'private_tests#index'
 
     resources :dogs
   end

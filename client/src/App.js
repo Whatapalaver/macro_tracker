@@ -1,38 +1,39 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      message: 'Click the button to load data!'
-    }
-  }
 
-  fetchData = () => {
-    axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
+export default function App() {
+  const [message, setMessage] = useState('Click the button to load data!')
+  function fetchData(path) {
+    axios.get(path)
     .then((response) => {
       // handle success
-      console.log(response.data) // The entire response from the Rails API
-
-      console.log(response.data.message) // Just the message
-      this.setState({
-        message: response.data.message
-      });
-    }) 
+      console.log(response.data)
+      console.log(response.data.message)
+      setMessage(response.data.message);})
+    .catch((error) => {
+      console.log(error)
+      setMessage(error.response.data)
+    });
   }
 
-  render() {
-    return (
-      <div className="App">
-        <h1>{ this.state.message }</h1>
-        <button onClick={this.fetchData} >
-          Fetch Data
-        </button>        
+  return (
+    <div className="App">
+      <h1>{ message }</h1>
+      <div className="row">
+      <div>
+        <button onClick={() => {fetchData('/api/data')}} >
+          Fetch Public Data
+        </button>
       </div>
-    );
-  }
-}
+      <div>
+        <button onClick={() => {fetchData('/api/private_data')}} >
+          Fetch Private Data
+        </button>
+      </div>
+      </div>
 
-export default App;
+    </div>
+  );
+}
