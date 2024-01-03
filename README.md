@@ -1,39 +1,17 @@
-# Last update
+# Weekly Macro Tracker
 
-This project was last updated on _09-11-2023_.
+Converting the [Weekly Macro Tracker spreadsheet](https://warriorwomen.co.uk/2018/05/10/macro-meal-planner-spreadsheet/) application to a Rails / React app with user accounts
 
-# React + Rails No-Fluff Boilerplate
+## Boilerplate Instructions
 
-A boilerplate project for anyone interested in making a project that uses React and Rails.
-
-Note! This boilerplate has _no fluff_! That means that there's nothing set up for you to do authentication stuff, there's no Redux stuff, and there's no React Router stuff.
-
-The main important bit is that the React project has `proxy` set to `localhost:3001` in the `package.json` file. Take a look!
-
-## Hall of Fame
-
-Here are some projects that have been built using this boilerplate.
-
-- [latercart](https://github.com/bonitac/latercart)
-- [Cards-Against-the-Internet](https://github.com/csx773/Cards-Against-the-Internet)
-- [Jetify](https://github.com/shadeying/Jetify)
-- [watchpoll](https://github.com/grey275/watchpoll)
-- [StartDuck](https://github.com/JerChuang/StartDuck)
-- [Change-App](https://github.com/ZHShang/Change-App)
-
-## Using the boilerplate
-
-First, fork this boilerplate so you get your own copy of it. Once you have done that, you can clone your new repo to your machine, and get started.
-
-You need **TWO** terminals for this.
+Boilerplate from [Nima Boscarino](https://github.com/NimaBoscarino/react-rails-boilerplate).
 
 In one terminal, run `bundle` to install the dependencies. Run `bin/rake db:setup` to create the databases (called rails_project_development by default). Run `bin/rails s` to run the server.
 
-In the other terminal, `cd` into `client`. Run `npm install`. Rename the `.env.example` file to be called `.env`. Then run `npm start` and go to `localhost:3000` in your browser.
+In the other terminal, `cd` into `client`. Run `yarn install`. Rename the `.env.example` file to be called `.env`. Then run `yarn start` and go to `localhost:3000` in your browser.
 
 In the browser, you can click on the button and see the data get loaded.
 
-If this doesn't work, please message me!
 
 ## Next steps
 
@@ -80,7 +58,3 @@ Once it's deployed, you can run the following commands to manage your app:
 There are other commands, but these are good to get you started!
 
 To make your app work properly with React Router (if you end up using it) on Heroku, I've added a special route to the `routes.rb` file (`get '*path' ... `).
-
-## Contact
-
-Please contact me at `nima.boscarino@gmail.com` if you have any questions or requests, or post an issue to this repo.
